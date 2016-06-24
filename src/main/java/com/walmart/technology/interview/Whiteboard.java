@@ -33,14 +33,14 @@ public class Whiteboard {
 		monthFirstDayFlag= (((month-1)* 30)+1) % 7; //Calculates the key for the First Day of the Month.
 		if(month==1){ 
 			//As Jan 1st is Friday we can directly check whether input day is Saturday or Sunday so that it occurs five times in the month  
-			if(dayInput.equals(dayMap.get(1))||dayInput.equals(dayMap.get(2)))
+			if(dayInput.equals(dayMap.get(0))||dayInput.equals(dayMap.get(1)))
 				return 5;
 			else 
 				return 4;
 		}else{
 			//As every month has (4*7+2) days, we find the key for the First Day of the month and check if the inputDay equals to either of the 
 			//value of the corresponding 2 sequential keys.
-			if(dayInput.equals(dayMap.get(monthFirstDayFlag+1))||dayInput.equals(dayMap.get(monthFirstDayFlag+2)))
+			if(dayInput.equals(dayMap.get(monthFirstDayFlag))||dayInput.equals(dayMap.get(monthFirstDayFlag+1)))
 				return 5;
 			else 
 				return 4;
