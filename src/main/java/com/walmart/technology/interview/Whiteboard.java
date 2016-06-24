@@ -23,17 +23,17 @@ public class Whiteboard {
 		
 		int monthFirstDayFlag; //Used to hold the Key for the First Day of the given month.      
 		Map<Integer,String> dayMap= new HashMap<Integer,String>();
-		dayMap.put(1, "Saturday");
-		dayMap.put(2, "Sunday");
-		dayMap.put(3, "Monday");
-		dayMap.put(4, "Tuesday");
-		dayMap.put(5, "Wednesday");
-		dayMap.put(6, "Thursday");
-		dayMap.put(0, "Friday");
+		dayMap.put(0, "Thursday");
+		dayMap.put(1, "Friday");
+		dayMap.put(2, "Saturday");
+		dayMap.put(3, "Sunday");
+		dayMap.put(4, "Monday");
+		dayMap.put(5, "Tuesday");
+		dayMap.put(6, "Wednesday");
 		monthFirstDayFlag= (((month-1)* 30)+1) % 7; //Calculates the key for the First Day of the Month.
 		if(month==1){ 
 			//As Jan 1st is Friday we can directly check whether input day is Saturday or Sunday so that it occurs five times in the month  
-			if(dayInput.equals(dayMap.get(0))||dayInput.equals(dayMap.get(1)))
+			if(dayInput.equals(dayMap.get(1))||dayInput.equals(dayMap.get(2)))
 				return 5;
 			else 
 				return 4;
